@@ -30,14 +30,14 @@ public class PersonaController {
     @PostMapping("/personas/crear")
     public String createPersona(@RequestBody Persona persona){
         ipersonaService.savePersona(persona);
-        return "La persona fue creada correctamente";
+        return "La persona fue creada correctamente!";
     }
     
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/personas/borrar/{id}")
     public String deletePersona(@PathVariable Long id){
         ipersonaService.deletePersona(id);
-        return "La persona fue eliminada correctamente";
+        return "La persona fue eliminada correctamente.";
     }
     
     @PreAuthorize("hasRole('ADMIN')")
