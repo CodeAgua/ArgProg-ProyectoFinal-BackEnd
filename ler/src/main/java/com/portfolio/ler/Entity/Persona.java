@@ -24,9 +24,7 @@ public class Persona {
     @Size(min = 1, max = 70, message = "Es demasiado corto o demasiado largo.")
     private String apellido;
     
-    @Size(min = 1, max = 150, message = "Es demasiado corto o demasiado largo.")
+    @Size(min = 1, max = 200, message = "Es demasiado corto o demasiado largo.")
     private String img;
-
-       
-    
+ 
 }
