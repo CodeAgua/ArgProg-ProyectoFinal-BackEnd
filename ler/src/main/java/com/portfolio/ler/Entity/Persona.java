@@ -26,7 +26,7 @@ public class Persona {
     private String apellido;
     
     @NotNull
-    @Size(min = 1, max = 200, message = "Es demasiado corto o demasiado largo.")
+    @Size(min = 1, max = 400, message = "Es demasiado corto o demasiado largo.")
     private String img;
     
     @NotBlank
