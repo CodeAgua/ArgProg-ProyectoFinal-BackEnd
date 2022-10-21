@@ -73,7 +73,7 @@ public class CEducacion {
             return new ResponseEntity(new Mensaje("Este ID no existe."), HttpStatus.NOT_FOUND);
         }
         if(sEducacion.existsByNombreE(dtoeducacion.getNombreE()) && sEducacion.getByNombreE(dtoeducacion.getNombreE()).get().getId() != id){
-            return new ResponseEntity(new Mensaje("Este nombre ya existe"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("Este nombre ya existe."), HttpStatus.BAD_REQUEST);
         }
         if(StringUtils.isBlank(dtoeducacion.getNombreE())){
             return new ResponseEntity(new Mensaje("Este campo no puede estar vacío."), HttpStatus.BAD_REQUEST);
