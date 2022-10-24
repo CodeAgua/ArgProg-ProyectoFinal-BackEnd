@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,6 +39,14 @@ public class CBanner {
         
         Banner banner = sBanner.getOne(id).get();
         return new ResponseEntity(banner, HttpStatus.OK);
+    }
+    
+    @PostMapping("/create")
+    public ResponseEntity<?> create(@RequestBody dtoBanner dtobanner){
+        Banner banner = new Banner(dtobanner.getUrlimg());
+        sBanner.save(banner);
+        
+        return new ResponseEntity(new Mensaje("Banner agregado satisfactoriamente."), HttpStatus.OK);
     }
     
     @PutMapping("/update/{id}")

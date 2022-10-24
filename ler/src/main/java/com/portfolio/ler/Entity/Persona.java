@@ -34,7 +34,7 @@ public class Persona {
     private String titulo;
     
     @NotBlank
-    @Size(min = 1, max = 350, message = "Es demasiado corto o demasiado largo.")
+    @Size(min = 1, max = 600, message = "Es demasiado corto o demasiado largo.")
     private String descripcion;
 
     public Persona() {

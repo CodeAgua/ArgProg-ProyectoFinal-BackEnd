@@ -14,6 +14,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,9 +41,19 @@ public class PersonaController {
         Persona persona = personaService.getOne(id).get();
         return new ResponseEntity(persona, HttpStatus.OK);
     }
+    
+    @PreAuthorize("hasRole('ADMIN')")
+    @PostMapping("/create")
+    public ResponseEntity<?> create(@RequestBody dtoPersona dtopersona){
+        Persona persona = new Persona(dtopersona.getNombre(), dtopersona.getApellido(), dtopersona.getImg(),
+                dtopersona.getTitulo(), dtopersona.getDescripcion());
+        personaService.save(persona);
+        
+        return new ResponseEntity(new Mensaje("Persona agregada satisfactoriamente."), HttpStatus.OK);
+    }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("/editar/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoPersona dtopersona){
         if(!personaService.existsById(id)){
             return new ResponseEntity(new Mensaje("Este ID no existe."), HttpStatus.NOT_FOUND);

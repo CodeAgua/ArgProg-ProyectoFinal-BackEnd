@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,7 +16,10 @@ public class Proyecto {
     private int id;
     
     private String tituloP;
+    
+    @Size(min = 1, max = 600, message = "Es demasiado corto o demasiado largo.")
     private String descripcionP;
+    
     private String demoP;
     private String repoP;
     private String urlimagenP;
