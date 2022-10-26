@@ -7,18 +7,14 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
-import lombok.Getter;
-import lombok.Setter;
+import javax.validation.constraints.NotBlank;
 
 @Entity
-@Getter
-@Setter
 public class Rol {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @NotNull
+    @NotBlank
     @Enumerated(EnumType.STRING)
     private RolNombre rolNombre;
     

@@ -17,11 +17,16 @@ public class Proyecto {
     
     private String tituloP;
     
-    @Size(min = 1, max = 600, message = "Es demasiado corto o demasiado largo.")
+    @Size(min = 1, max = 800, message = "Es demasiado corto o demasiado largo.")
     private String descripcionP;
     
+    @Size(min = 1, max = 800, message = "Es demasiado corto o demasiado largo.")
     private String demoP;
+    
+    @Size(min = 1, max = 800, message = "Es demasiado corto o demasiado largo.")
     private String repoP;
+    
+    @Size(min = 1, max = 800, message = "Es demasiado corto o demasiado largo.")
     private String urlimagenP;
 
     public Proyecto() {

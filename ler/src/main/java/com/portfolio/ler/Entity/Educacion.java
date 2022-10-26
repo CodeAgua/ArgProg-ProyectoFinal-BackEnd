@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,6 +17,8 @@ public class Educacion {
     private String tituloE;
     private String fechaE;
     private String nombreE;
+    
+    @Size(min = 1, max = 800, message = "Es demasiado corto o demasiado largo.")
     private String descripcionE;
 
     public Educacion() {
