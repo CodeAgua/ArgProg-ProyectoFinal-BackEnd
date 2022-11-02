@@ -80,3 +80,13 @@ Vamos a Authorization > Bearer Token y lo pegamos ahí. En Body vamos a la opci�
 {
     "urlimg": "https://iili.io/Lk4Fwl.png"
 }
+
+## ✒️ Autor
+[<img src="https://avatars.githubusercontent.com/u/96397960?v=4" width=115>
+<br><sub>CodeAgua</sub>](https://github.com/CodeAgua)
+
+## 📄 Licencia
+Este proyecto está bajo la licencia GNU General Public License v3.0 - mira el archivo [ler/LICENSE](LICENSE) para más detalles.
+
+## 🎁 Agradecimientos
+A Argentina Programa por darme la oportunidad de iniciarme en este mundo tan complejo.
